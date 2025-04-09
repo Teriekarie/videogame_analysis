@@ -4,3 +4,4 @@ pandas
 lxml
 streamlit
 matplotlib
+plotly
