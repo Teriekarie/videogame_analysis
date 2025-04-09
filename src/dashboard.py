@@ -15,10 +15,10 @@ st.set_page_config(
 # Load the cleaned data
 @st.cache_data
 def load_data():
-    data = pd.read_csv('cleaned_games_data.csv')  # Update with the correct path to your cleaned data
+    data = pd.read_csv('src/cleaned_games_data.csv')  
     # Drop rows with invalid or missing release_year values
     data = data[pd.to_numeric(data['release_year'], errors='coerce').notnull()]
-    data['release_year'] = data['release_year'].astype(int)  # Ensure release_year is an integer
+    data['release_year'] = data['release_year'].astype(int)  
     data = data[data['release_year'] > 0]  # Remove invalid years like 0
     return data
 
